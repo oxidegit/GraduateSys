@@ -7,12 +7,12 @@ import java.sql.Statement;
 import java.util.*;
 import javax.swing.*;
 
-//ÕâÊÇÑ§ÉúÍøÉÏ±¨Ãû´°¿Ú
+//è¿™æ˜¯å­¦ç”Ÿç½‘ä¸ŠæŠ¥åçª—å£ hah
 public class EnrollPane extends JPanel{
 	JTextField[] jt = new JTextField[10]; 
-	String[] s = {"¿¼ºÅ:", "ĞÕÃû:", "ĞÔ±ğ:", "ÄêÁä:", "ÕşÖÎÃæÃ²:", "ÊÇ·ñÓ¦½ì:", "Ñ§Àú:", "À´Ô´:", "±¨¿¼×¨Òµ:", "±¨¿¼Àà±ğ:"};;
-	JButton enter = new JButton("Ìá½»");
-	JButton cancel = new JButton("È¡Ïû");
+	String[] s = {"è€ƒå·:", "å§“å:", "æ€§åˆ«:", "å¹´é¾„:", "æ”¿æ²»é¢è²Œ:", "æ˜¯å¦åº”å±Š:", "å­¦å†:", "æ¥æº:", "æŠ¥è€ƒä¸“ä¸š:", "æŠ¥è€ƒç±»åˆ«:"};;
+	JButton enter = new JButton("æäº¤");
+	JButton cancel = new JButton("å–æ¶ˆ");
 	
 	EnrollPane(){
 	}
@@ -35,9 +35,9 @@ public class EnrollPane extends JPanel{
 		this.add(cancel, Utility.createConstrainInset(constraints, 1, 10, 1, 1, GridBagConstraints.EAST, new Insets(13, 0, 0, 0)));
 	}
 	
-	//ÎªÃæ°åÀïµÄ×é¼şÉèÖÃ¼àÌıÆ÷
+	//ä¸ºé¢æ¿é‡Œçš„ç»„ä»¶è®¾ç½®ç›‘å¬å™¨
 	void setListener(final JPanel p){
-		//ÎªÈ·¶¨°´Å¥×¢²á¼àÌıÆ÷
+		//ä¸ºç¡®å®šæŒ‰é’®æ³¨å†Œç›‘å¬å™¨
 		enter.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				Vector v = getEnrollInfo();
@@ -45,9 +45,9 @@ public class EnrollPane extends JPanel{
 				try {
 					s.insertTable(v);
 				} catch (NumberFormatException a) {
-					JOptionPane.showMessageDialog(p, "´íÎó£ºÄ³Ğ©Ñ¡ÏîÊÇ·ñº¬ÊäÈë·Ç·¨×Ö·û£¡");
+					JOptionPane.showMessageDialog(p, "é”™è¯¯ï¼šæŸäº›é€‰é¡¹æ˜¯å¦å«è¾“å…¥éæ³•å­—ç¬¦ï¼");
 				}catch(SQLException e1){
-					JOptionPane.showMessageDialog(p, "´íÎó£º¸ÃÑ§ºÅÒÑ¾­±¨Ãû!");
+					JOptionPane.showMessageDialog(p, "é”™è¯¯ï¼šè¯¥å­¦å·å·²ç»æŠ¥å!");
 				} catch (InputNullException e1) {
 					JOptionPane.showMessageDialog(p, e1.getMessage());
 				}		
@@ -57,7 +57,7 @@ public class EnrollPane extends JPanel{
 	}
 	
 	
-	//·µ»ØÒÑ¾­×¢²áÑ§ÉúµÄĞÅÏ¢
+	//è¿”å›å·²ç»æ³¨å†Œå­¦ç”Ÿçš„ä¿¡æ¯
 	Vector getEnrollInfo(){
 		Vector v = new Vector();
 		
